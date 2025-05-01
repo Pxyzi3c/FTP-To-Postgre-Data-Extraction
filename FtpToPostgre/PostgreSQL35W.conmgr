@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PostgreSQL35W"
+  DTS:DTSID="{50DFDC78-9568-49D5-A9C8-95ACA9F3A25B}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Dsn=PostgreSQL35W;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
