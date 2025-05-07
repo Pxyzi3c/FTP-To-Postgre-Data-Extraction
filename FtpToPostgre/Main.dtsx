@@ -5,14 +5,15 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-15MRQFI9"
   DTS:CreatorName="LAPTOP-15MRQFI9\Harvy Jones"
+  DTS:DelayValidation="True"
   DTS:DTSID="{2F5DC57E-8345-44C0-878E-C093717C7309}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="13321"
   DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{96CE89BB-BEF9-457B-A640-20D127E0AD53}">
+  DTS:VersionBuild="73"
+  DTS:VersionGUID="{F13F0BC2-62E6-41B2-8321-3A68CC3CABA9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,6 +28,17 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{A27A11E0-3BD4-4CAD-AFBA-72FDB7175E54}"
+      DTS:ObjectName="Parameter">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -35,7 +47,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ExtractsFolder">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Users\Harvy Jones\source\repos\FtpToPostgre\Extracts</DTS:VariableValue>
+        DTS:DataType="8">C:\Users\Harvy Jones\source\repos\FtpToPostgre\Extracts\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3676,15 +3688,15 @@
         <NodeLayout
           Size="248,41.6"
           Id="Package\Download OFAC CSV files from FTP"
-          TopLeft="255.5,5.50000000000007" />
+          TopLeft="255.5,5.50000000000006" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Execute SQL Task"
           TopLeft="297.1,107.1" />
         <NodeLayout
-          Size="206.4,41.6"
-          Id="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre"
-          TopLeft="5.50000000000004,5.50000000000007" />
+          Size="173.6,41.6"
+          Id="Package\Merge OFAC Tables"
+          TopLeft="292.499984018505,416.866663767828" />
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre"
@@ -3693,6 +3705,10 @@
           Size="203.2,41.6"
           Id="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre"
           TopLeft="539.1,5.49999999999995" />
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre"
+          TopLeft="5.50000000000004,5.50000000000007" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -3706,14 +3722,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3744,10 +3760,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Merge OFAC Tables"
-          TopLeft="292.499984018505,416.866663767828" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="379.399992009253,354.3">
@@ -3773,6 +3785,364 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Merge OFAC Tables">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Merge OFAC Tables\Postgre Table"
+          TopLeft="282.857138642243,356.428566117372" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Merge OFAC Tables\OFAC ALT"
+          TopLeft="352.14285189552,151.42856917211" />
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\Merge OFAC Tables\OFAC ADD"
+          TopLeft="203.999996960163,53.6000007152557" />
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\Merge OFAC Tables\OFAC SDN"
+          TopLeft="53.9999991953373,52.9999992102385" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Merge OFAC Tables\Merged OFAC Tables"
+          TopLeft="272.857138791255,251.428567681994" />
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD"
+          TopLeft="133.999998003244,146.999997809529" />
+        <EdgeLayout
+          Id="Package\Merge OFAC Tables.Paths[ODBC Source Output2]"
+          TopLeft="416.54285189552,193.02856917211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.5523797709319,58.3999985098839"
+              Start="0,0"
+              End="-25.5523797709319,50.8999985098839">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.7299106182672" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.7299106182672"
+                    Point2="0,34.7299106182672"
+                    Point3="-4,34.7299106182672" />
+                  <mssgle:LineSegment
+                    End="-21.5523797709319,34.7299106182672" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.5523797709319,34.7299106182672"
+                    Point2="-25.5523797709319,34.7299106182672"
+                    Point3="-25.5523797709319,38.7299106182672" />
+                  <mssgle:LineSegment
+                    End="-25.5523797709319,50.8999985098839" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge OFAC Tables.Paths[ODBC Source Output1]"
+          TopLeft="267.199997481704,95.2000007152558">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.7999970942736"
+              Start="0,0"
+              End="0,44.2999970942736">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.2999970942736" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge OFAC Tables.Paths[ODBC Source Output]"
+          TopLeft="119.999999195337,94.5999992102385">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.1999988079071,52.3999985992908"
+              Start="0,0"
+              End="81.1999988079071,44.8999985992908">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.187469045843" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.187469045843"
+                    Point2="0,31.187469045843"
+                    Point3="4,31.187469045843" />
+                  <mssgle:LineSegment
+                    End="77.1999988079071,31.187469045843" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.1999988079071,31.187469045843"
+                    Point2="81.1999988079071,31.187469045843"
+                    Point3="81.1999988079071,35.187469045843" />
+                  <mssgle:LineSegment
+                    End="81.1999988079071,44.8999985992908" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge OFAC Tables.Paths[Merge Join Output1]"
+          TopLeft="362.457138791255,293.028567681994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.00000014901161,63.3999984353782"
+              Start="0,0"
+              End="-8.00000014901161,55.8999984353782">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.6999992176891" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.6999992176891"
+                    Point2="0,31.6999992176891"
+                    Point3="-4,31.6999992176891" />
+                  <mssgle:LineSegment
+                    End="-4.00000014901161,31.6999992176891" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.00000014901161,31.6999992176891"
+                    Point2="-8.00000014901161,31.6999992176891"
+                    Point3="-8.00000014901161,35.6999992176891" />
+                  <mssgle:LineSegment
+                    End="-8.00000014901161,55.8999984353782" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge OFAC Tables.Paths[Merge Join Output]"
+          TopLeft="232.799998003244,188.599997809529">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.123807454677,62.8285698724646"
+              Start="0,0"
+              End="101.123807454677,55.3285698724646">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.3635388976072" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.3635388976072"
+                    Point2="0,37.3635388976072"
+                    Point3="4,37.3635388976072" />
+                  <mssgle:LineSegment
+                    End="97.1238074546768,37.3635388976072" />
+                  <mssgle:CubicBezierSegment
+                    Point1="97.1238074546768,37.3635388976072"
+                    Point2="101.123807454677,37.3635388976072"
+                    Point3="101.123807454677,41.3635388976072" />
+                  <mssgle:LineSegment
+                    End="101.123807454677,55.3285698724646" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge OFAC Tables\Postgre Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge OFAC Tables\OFAC ALT">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge OFAC Tables\OFAC ADD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge OFAC Tables\OFAC SDN">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\CSV File"
+          TopLeft="74.1666626143788,110.933332561917" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\OFAC Table"
+          TopLeft="66.6666630241606,229.666665069594" />
+        <EdgeLayout
+          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre.Paths[Flat File Source Output]"
+          TopLeft="134.21666281927,152.533332561917">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.1333325076768"
+              Start="0,0"
+              End="0,69.6333325076768">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.6333325076768" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\OFAC Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\OFAC Table"
+          TopLeft="66.6666630241606,229.666665069594" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\CSV File"
+          TopLeft="74.1666626143788,110.933332561917" />
+        <EdgeLayout
+          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre.Paths[Flat File Source Output]"
+          TopLeft="134.21666281927,152.533332561917">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.1333325076768"
+              Start="0,0"
+              End="0,69.6333325076768">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.6333325076768" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\OFAC Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre">
     <LayoutInfo>
@@ -3813,350 +4183,6 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre\OFAC Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\CSV File"
-          TopLeft="74.1666626143788,110.933332561917" />
-        <NodeLayout
-          Size="136,41.6"
-          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\OFAC Table"
-          TopLeft="66.6666630241606,229.666665069594" />
-        <EdgeLayout
-          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre.Paths[Flat File Source Output]"
-          TopLeft="134.21666281927,152.533332561917">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77.1333325076768"
-              Start="0,0"
-              End="0,69.6333325076768">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.6333325076768" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\OFAC Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\CSV File"
-          TopLeft="74.1666626143788,110.933332561917" />
-        <NodeLayout
-          Size="136,41.6"
-          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\OFAC Table"
-          TopLeft="66.6666630241606,229.666665069594" />
-        <EdgeLayout
-          Id="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre.Paths[Flat File Source Output]"
-          TopLeft="134.21666281927,152.533332561917">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77.1333325076768"
-              Start="0,0"
-              End="0,69.6333325076768">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.6333325076768" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\OFAC Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Merge OFAC Tables">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="132,41.6"
-          Id="Package\Merge OFAC Tables\OFAC SDN"
-          TopLeft="53.9999991953373,52.9999992102385" />
-        <NodeLayout
-          Size="132,41.6"
-          Id="Package\Merge OFAC Tables\OFAC ADD"
-          TopLeft="203.999996960163,53.6000007152557" />
-        <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD"
-          TopLeft="133.999998003244,146.999997809529" />
-        <EdgeLayout
-          Id="Package\Merge OFAC Tables.Paths[ODBC Source Output]"
-          TopLeft="119.999999195337,94.5999992102385">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="81.1999988079071,52.3999985992908"
-              Start="0,0"
-              End="81.1999988079071,44.8999985992908">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.187469045843" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.187469045843"
-                    Point2="0,31.187469045843"
-                    Point3="4,31.187469045843" />
-                  <mssgle:LineSegment
-                    End="77.1999988079071,31.187469045843" />
-                  <mssgle:CubicBezierSegment
-                    Point1="77.1999988079071,31.187469045843"
-                    Point2="81.1999988079071,31.187469045843"
-                    Point3="81.1999988079071,35.187469045843" />
-                  <mssgle:LineSegment
-                    End="81.1999988079071,44.8999985992908" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge OFAC Tables.Paths[ODBC Source Output1]"
-          TopLeft="267.199997481704,95.2000007152558">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.7999970942736"
-              Start="0,0"
-              End="0,44.2999970942736">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.2999970942736" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="128.8,41.6"
-          Id="Package\Merge OFAC Tables\OFAC ALT"
-          TopLeft="352.14285189552,151.42856917211" />
-        <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Merge OFAC Tables\Merged OFAC Tables"
-          TopLeft="272.857138791255,251.428567681994" />
-        <EdgeLayout
-          Id="Package\Merge OFAC Tables.Paths[Merge Join Output]"
-          TopLeft="232.799998003244,188.599997809529">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="101.123807454677,62.8285698724646"
-              Start="0,0"
-              End="101.123807454677,55.3285698724646">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.3635388976072" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.3635388976072"
-                    Point2="0,37.3635388976072"
-                    Point3="4,37.3635388976072" />
-                  <mssgle:LineSegment
-                    End="97.1238074546768,37.3635388976072" />
-                  <mssgle:CubicBezierSegment
-                    Point1="97.1238074546768,37.3635388976072"
-                    Point2="101.123807454677,37.3635388976072"
-                    Point3="101.123807454677,41.3635388976072" />
-                  <mssgle:LineSegment
-                    End="101.123807454677,55.3285698724646" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge OFAC Tables.Paths[ODBC Source Output2]"
-          TopLeft="416.54285189552,193.02856917211">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-25.5523797709319,58.3999985098839"
-              Start="0,0"
-              End="-25.5523797709319,50.8999985098839">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.7299106182672" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.7299106182672"
-                    Point2="0,34.7299106182672"
-                    Point3="-4,34.7299106182672" />
-                  <mssgle:LineSegment
-                    End="-21.5523797709319,34.7299106182672" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-21.5523797709319,34.7299106182672"
-                    Point2="-25.5523797709319,34.7299106182672"
-                    Point3="-25.5523797709319,38.7299106182672" />
-                  <mssgle:LineSegment
-                    End="-25.5523797709319,50.8999985098839" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="143.2,41.6"
-          Id="Package\Merge OFAC Tables\Postgre Table"
-          TopLeft="282.857138642243,356.428566117372" />
-        <EdgeLayout
-          Id="Package\Merge OFAC Tables.Paths[Merge Join Output1]"
-          TopLeft="362.457138791255,293.028567681994">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-8.00000014901161,63.3999984353782"
-              Start="0,0"
-              End="-8.00000014901161,55.8999984353782">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.6999992176891" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.6999992176891"
-                    Point2="0,31.6999992176891"
-                    Point3="-4,31.6999992176891" />
-                  <mssgle:LineSegment
-                    End="-4.00000014901161,31.6999992176891" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.00000014901161,31.6999992176891"
-                    Point2="-8.00000014901161,31.6999992176891"
-                    Point3="-8.00000014901161,35.6999992176891" />
-                  <mssgle:LineSegment
-                    End="-8.00000014901161,55.8999984353782" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Merge OFAC Tables\OFAC SDN">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Merge OFAC Tables\OFAC ADD">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Merge OFAC Tables\OFAC ALT">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Merge OFAC Tables\Postgre Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

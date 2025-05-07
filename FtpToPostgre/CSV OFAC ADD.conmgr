@@ -20,7 +20,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="ent_num"
-          DTS:DTSID="{C5518881-7764-4417-AE8C-6E0257F39E8B}"
+          DTS:DTSID="{93D917AC-E93A-4B49-AAFB-3516199E790B}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -28,7 +28,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="add_num"
-          DTS:DTSID="{62596EF0-335E-4984-ADA0-A3D0F71B98C5}"
+          DTS:DTSID="{ACD361A9-B038-4F2D-9762-057DFD8B8E6A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -37,7 +37,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="address"
-          DTS:DTSID="{6C8BCF9F-04E2-4016-9470-17DB86E4795C}"
+          DTS:DTSID="{FAB93304-BC3A-4124-9AE4-C1D25B902AB2}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -46,7 +46,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="complete_address"
-          DTS:DTSID="{FC5A1D3F-CF12-49D1-8C0B-5930F2375318}"
+          DTS:DTSID="{DD508F09-6D85-430B-AC37-B7B9B43D3FC1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -55,7 +55,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="country"
-          DTS:DTSID="{B5DBFED5-18D6-4292-96A1-91D730508F58}"
+          DTS:DTSID="{23249E18-CC41-4234-8935-6E3E3AFD6062}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -64,7 +64,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="add_remarks"
-          DTS:DTSID="{B4B606D1-4363-4B55-AD12-8814153C26EF}"
+          DTS:DTSID="{FE8143BF-99B4-4CAD-B82B-3C65C4A183A9}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

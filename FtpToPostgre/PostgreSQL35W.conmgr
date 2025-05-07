@@ -5,6 +5,6 @@
   DTS:CreationName="ODBC">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Dsn=PostgreSQL35W;" />
+      DTS:ConnectionString="uid=postgres;Dsn=PostgreSQL35W;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
