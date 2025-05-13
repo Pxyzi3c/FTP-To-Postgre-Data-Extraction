@@ -12,42 +12,32 @@
   DTS:LocaleID="13321"
   DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="73"
-  DTS:VersionGUID="{F13F0BC2-62E6-41B2-8321-3A68CC3CABA9}">
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{0F1690A8-A0DB-475F-B4ED-3C0C8880B8B1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[PostgreSQL35W 1]"
-      DTS:CreationName="ODBC"
-      DTS:DTSID="{024BD9CE-FA29-4D6D-B51D-D0653C4DEE6A}"
-      DTS:ObjectName="PostgreSQL35W 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Dsn=PostgreSQL35W;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
-      DTS:DataType="3"
+      DTS:DataType="8"
       DTS:DTSID="{A27A11E0-3BD4-4CAD-AFBA-72FDB7175E54}"
-      DTS:ObjectName="Parameter">
+      DTS:ObjectName="ExtractsFolder">
       <DTS:Property
-        DTS:DataType="3"
-        DTS:Name="ParameterValue">0</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\Users\Harvy Jones\source\repos\FtpToPostgre\Extracts</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{C315F914-823D-4F18-A86B-8625E5C8CBB9}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::ExtractsFolder]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ExtractsFolder">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Users\Harvy Jones\source\repos\FtpToPostgre\Extracts\</DTS:VariableValue>
+        DTS:DataType="8">C:\Users\Harvy Jones\source\repos\FtpToPostgre\Extracts</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -4147,7 +4137,7 @@
     design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="136,41.6"
           Id="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre\OFAC Table"
@@ -4175,7 +4165,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
