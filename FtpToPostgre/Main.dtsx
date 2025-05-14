@@ -12,8 +12,8 @@
   DTS:LocaleID="13321"
   DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="86"
-  DTS:VersionGUID="{0F1690A8-A0DB-475F-B4ED-3C0C8880B8B1}">
+  DTS:VersionBuild="96"
+  DTS:VersionGUID="{BA78BE10-799A-4517-BB30-1B08BFE9A3D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -103,6 +103,1374 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Merge OFAC Tables\Add cleaned name"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;13"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Add cleaned name"
+              version="13">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        if (!Row.sdnname_IsNull)
+        {
+            string cleaned = Row.sdnname.ToUpper();
+            cleaned = cleaned.Replace("/", " ").Replace("-", " ");
+            cleaned = System.Text.RegularExpressions.Regex.Replace(cleaned, "[^A-Z0-9 ]", "");
+            cleaned = System.Text.RegularExpressions.Regex.Replace(cleaned, @"\s+", " ");
+            Row.cleanedname = cleaned.Trim();
+        }
+        else
+        {
+            Row.cleanedname = "";
+        }
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public Int64 entnum
+    {
+        get
+        {
+            return Buffer.GetInt64(BufferColumnIndexes[0]);
+        }
+    }
+    public bool entnum_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String sdnname
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[1]);
+        }
+    }
+    public bool sdnname_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public String sdntype
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[2]);
+        }
+    }
+    public bool sdntype_IsNull
+    {
+        get
+        {
+            return IsNull(2);
+        }
+    }
+
+    public String program
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[3]);
+        }
+    }
+    public bool program_IsNull
+    {
+        get
+        {
+            return IsNull(3);
+        }
+    }
+
+    public String title
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[4]);
+        }
+    }
+    public bool title_IsNull
+    {
+        get
+        {
+            return IsNull(4);
+        }
+    }
+
+    public String callsign
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[5]);
+        }
+    }
+    public bool callsign_IsNull
+    {
+        get
+        {
+            return IsNull(5);
+        }
+    }
+
+    public String vesstype
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[6]);
+        }
+    }
+    public bool vesstype_IsNull
+    {
+        get
+        {
+            return IsNull(6);
+        }
+    }
+
+    public String tonnage
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[7]);
+        }
+    }
+    public bool tonnage_IsNull
+    {
+        get
+        {
+            return IsNull(7);
+        }
+    }
+
+    public String grt
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[8]);
+        }
+    }
+    public bool grt_IsNull
+    {
+        get
+        {
+            return IsNull(8);
+        }
+    }
+
+    public String vessflag
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[9]);
+        }
+    }
+    public bool vessflag_IsNull
+    {
+        get
+        {
+            return IsNull(9);
+        }
+    }
+
+    public String vessowner
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[10]);
+        }
+    }
+    public bool vessowner_IsNull
+    {
+        get
+        {
+            return IsNull(10);
+        }
+    }
+
+    public String remarks
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[11]);
+        }
+    }
+    public bool remarks_IsNull
+    {
+        get
+        {
+            return IsNull(11);
+        }
+    }
+
+    public Int64 addnum
+    {
+        get
+        {
+            return Buffer.GetInt64(BufferColumnIndexes[12]);
+        }
+    }
+    public bool addnum_IsNull
+    {
+        get
+        {
+            return IsNull(12);
+        }
+    }
+
+    public String address
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[13]);
+        }
+    }
+    public bool address_IsNull
+    {
+        get
+        {
+            return IsNull(13);
+        }
+    }
+
+    public String completeaddress
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[14]);
+        }
+    }
+    public bool completeaddress_IsNull
+    {
+        get
+        {
+            return IsNull(14);
+        }
+    }
+
+    public String country
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[15]);
+        }
+    }
+    public bool country_IsNull
+    {
+        get
+        {
+            return IsNull(15);
+        }
+    }
+
+    public String addremarks
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[16]);
+        }
+    }
+    public bool addremarks_IsNull
+    {
+        get
+        {
+            return IsNull(16);
+        }
+    }
+
+    public Decimal altnum
+    {
+        get
+        {
+            return Buffer.GetDecimal(BufferColumnIndexes[17]);
+        }
+    }
+    public bool altnum_IsNull
+    {
+        get
+        {
+            return IsNull(17);
+        }
+    }
+
+    public String alttype
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[18]);
+        }
+    }
+    public bool alttype_IsNull
+    {
+        get
+        {
+            return IsNull(18);
+        }
+    }
+
+    public String altname
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[19]);
+        }
+    }
+    public bool altname_IsNull
+    {
+        get
+        {
+            return IsNull(19);
+        }
+    }
+
+    public String altremarks
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[20]);
+        }
+    }
+    public bool altremarks_IsNull
+    {
+        get
+        {
+            return IsNull(20);
+        }
+    }
+
+    public String cleanedname
+    {
+        set
+        {
+            this[21] = value;
+        }
+    }
+    public bool cleanedname_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(21);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_d75f02e4031147968711e927b92f64a7.Properties.Settings.get_Default():SC_d75f02e4031147968711e927b92f64a7.Properties.Sett" +
+    "ings")]
+
+namespace SC_d75f02e4031147968711e927b92f64a7.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_d75f02e4031147968711e927b92f64a7.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_d75f02e4031147968711e927b92f64a7.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_d75f02e4031147968711e927b92f64a7.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_d75f02e4031147968711e927b92f64a7.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_d75f02e4031147968711e927b92f64a7.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>SC_d75f02e4031147968711e927b92f64a7</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>SC_d75f02e4031147968711e927b92f64a7</msb:DisplayName>
+    <msb:ProjectId>{F32A6BAE-CA32-4E06-A588-8B3E199AF952}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_d75f02e4031147968711e927b92f64a7.csproj" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_d75f02e4031147968711e927b92f64a7")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_d75f02e4031147968711e927b92f64a7")]
+[assembly: AssemblyCopyright("Copyright @  2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_d75f02e4031147968711e927b92f64a7.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5BCFF59C-C5E4-491A-8DCD-EAF2627467EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_d75f02e4031147968711e927b92f64a7</RootNamespace>
+    <AssemblyName>SC_d75f02e4031147968711e927b92f64a7</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptComponent" IconIndex="0" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_d75f02e4031147968711e927b92f64a7.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAEwYJGgAAAAAAAAAAOAAIiALATAAABwAAAAIAAAAAAAA4jsA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAJA7AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA6BsAAAAgAAAAHAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAeAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADE
+OwAAAAAAAEgAAAACAAUAiCQAAFAWAAABAAAAAAAAANg6AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACioTMAMAbwAAAAEAABEDbwkAAAYt
+WwNvCAAABm8SAAAKCgZyAQAAcHIFAABwbxMAAApyCQAAcHIFAABwbxMAAAoKBnINAABwciMAAHAo
+FAAACgoGciUAAHByBQAAcCgUAAAKCgMGbxUAAApvMAAABioDciMAAHBvMAAABioeAig0AAAGKioC
+AwQFKBYAAAoqUgJ7FwAACgJ7GAAAChaUbxkAAAoqIgIWKBoAAAoqUgJ7FwAACgJ7GAAACheUbxsA
+AAoqIgIXKBoAAAoqUgJ7FwAACgJ7GAAAChiUbxsAAAoqIgIYKBoAAAoqUgJ7FwAACgJ7GAAAChmU
+bxsAAAoqIgIZKBoAAAoqUgJ7FwAACgJ7GAAAChqUbxsAAAoqIgIaKBoAAAoqUgJ7FwAACgJ7GAAA
+ChuUbxsAAAoqIgIbKBoAAAoqUgJ7FwAACgJ7GAAAChyUbxsAAAoqIgIcKBoAAAoqUgJ7FwAACgJ7
+GAAACh2UbxsAAAoqIgIdKBoAAAoqUgJ7FwAACgJ7GAAACh6UbxsAAAoqIgIeKBoAAAoqVgJ7FwAA
+CgJ7GAAACh8JlG8bAAAKKiYCHwkoGgAACipWAnsXAAAKAnsYAAAKHwqUbxsAAAoqJgIfCigaAAAK
+KlYCexcAAAoCexgAAAofC5RvGwAACiomAh8LKBoAAAoqVgJ7FwAACgJ7GAAACh8MlG8ZAAAKKiYC
+HwwoGgAACipWAnsXAAAKAnsYAAAKHw2UbxsAAAoqJgIfDSgaAAAKKlYCexcAAAoCexgAAAofDpRv
+GwAACiomAh8OKBoAAAoqVgJ7FwAACgJ7GAAACh8PlG8bAAAKKiYCHw8oGgAACipWAnsXAAAKAnsY
+AAAKHxCUbxsAAAoqJgIfECgaAAAKKlYCexcAAAoCexgAAAofEZRvHAAACiomAh8RKBoAAAoqVgJ7
+FwAACgJ7GAAACh8SlG8bAAAKKiYCHxIoGgAACipWAnsXAAAKAnsYAAAKHxOUbxsAAAoqJgIfEyga
+AAAKKlYCexcAAAoCexgAAAofFJRvGwAACiomAh8UKBoAAAoqKgIfFQMoHQAACipeAywJAh8VKB4A
+AAoqci0AAHBzHwAACnoeAiggAAAKKh4CKCEAAAoqfgIoIgAACgICczgAAAZ9AQAABAICczkAAAZ9
+AgAABCqSBHLKAABwGm8jAAAKLBUCBQIDKCQAAAoOBHMFAAAGbzYAAAYqSisHAgNvNwAABgNvMgAA
+Bi3xKgYqOgIoJQAACgIDfQMAAAQqOgIoJQAACgIDfQQAAAQqHgIoJQAACiqufgUAAAQtHnLaAABw
+0AcAAAIoJgAACm8nAAAKcygAAAqABQAABH4FAAAEKhp+BgAABCoeAoAGAAAEKhp+BwAABCoeAigp
+AAAKKi5zPwAABoAHAAAEKgAAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAKwJ
+AAAjfgAAGAoAAAgJAAAjU3RyaW5ncwAAAAAgEwAATAEAACNVUwBsFAAAEAAAACNHVUlEAAAAfBQA
+ANQBAAAjQmxvYgAAAAAAAAACAAABVxWiAQkBAAAA+gEzABYAAAEAAAAhAAAACAAAAAcAAABAAAAA
+DwAAACkAAAAQAAAAAQAAAAMAAAAvAAAAMAAAAAEAAAAEAAAAAQAAAAAAeQMBAAAAAAAGAFgCvQYG
+AOwCvQYGAKQBqgYPADEHAAAGANEB6QUGADsC6QUGABwC6QUGANMC6QUGAHgC6QUGAJEC6QUGAOgB
+6QUGAAMCNAMKAKwCzAAKAGYGzAAOAFcGzAAKADIGzAAGAFsDbgUKAGAIzAAGACMIbgUGAIcBqgYG
+AHcG3QYGACYG1AUSAFcBYwMSALgBYwMSAD8BvwUGAGwBvQYGAFEDbgUSAOkI2AcGAPsFbgUGABUG
+bgUGAO0AbgUGAGwAbgUGAPMI6QUAAAAALgAAAAAAAQABAAEAEAC0BQAAEAABAAEAAQAQAEoGAAA5
+AAEABQABABAAQggAAEkAAQA0AAEAEAD3BwAATQADADgAAQAQAG8HAABNAAQAOQAAABAA5AZAB00A
+BQA6AAABEACeB0AHZQAHAD4ABgD3B5YABgBvB5oAAQBQCJ4AAQBQCJ4AEQCbBaIAEQAvAaYAEQBQ
+AKoAUCAAAAAAxgAKAwYAAQBYIAAAAADGABUDBgABAGAgAAAAAMYAygiuAAEA2yAAAAAAhhidBgYA
+AgDjIAAAAACGGJ0GMAACAO4gAAAAAIYIkAW0AAUAAyEAAAAAhgiHBF0ABQAMIQAAAACGCLQAHwAF
+ACEhAAAAAIYI3ANdAAUAKiEAAAAAhgjyAB8ABQA/IQAAAACGCAIEXQAFAEghAAAAAIYIWQUfAAUA
+XSEAAAAAhghQBF0ABQBmIQAAAACGCJAAHwAFAHshAAAAAIYItANdAAUAhCEAAAAAhginBR8ABQCZ
+IQAAAACGCJkEXQAFAKIhAAAAAIYI/gAfAAUAtyEAAAAAhggVBF0ABQDAIQAAAACGCGAAHwAFANUh
+AAAAAIYIoQNdAAUA3iEAAAAAhgiNCB8ABQDzIQAAAACGCC8FXQAFAPwhAAAAAIYIJwMfAAUAEiIA
+AAAAhgg8BF0ABQAcIgAAAACGCIcGHwAFADIiAAAAAIYIrQRdAAUAPCIAAAAAhginBx8ABQBSIgAA
+AACGCMIEXQAFAFwiAAAAAIYIegW0AAUAciIAAAAAhghjBF0ABQB8IgAAAACGCAMIHwAFAJIiAAAA
+AIYIAQVdAAUAnCIAAAAAhggPCB8ABQCyIgAAAACGCBQFXQAFALwiAAAAAIYI/AgfAAUA0iIAAAAA
+hgg+BV0ABQDcIgAAAACGCLMHHwAFAPIiAAAAAIYI1QRdAAUA/CIAAAAAhgiFBbgABQASIwAAAACG
+CHUEXQAFABwjAAAAAIYICwEfAAUAMiMAAAAAhggpBF0ABQA8IwAAAACGCMAAHwAFAFIjAAAAAIYI
+7wNdAAUAXCMAAAAAhgjCBx8ABQByIwAAAACGCOsEXQAFAHwjAAAAAIYIpAAQAAUAhyMAAAAAhgjF
+A70ABgCfIwAAAACGAOEIXQAHAKcjAAAAAIYAKghdAAcAryMAAAAAhhidBgYABwDPIwAAAADGAL0I
+wgAHAPQjAAAAAMYBtgiuAAsAByQAAAAAxgHKCK4ADAAJJAAAAACGGJ0GzAANABgkAAAAAIYYnQbM
+AA4AJyQAAAAAgxidBgYADwAvJAAAAACTCHMG0gAPAFskAAAAAJMIFwHXAA8AYiQAAAAAkwgjAdwA
+DwBqJAAAAACWCDYI4gAQAHEkAAAAAIYYnQYGABAAeSQAAAAAkRijBucAEAAAAAEA5QgAAAEAbAYA
+AAIAeQcAAAMAQAYAAAEAIQMAAAEAIQMAAAEANwAAAAIAmgAAAAMAbAYAAAQAQAYAAAEAbAYAAAEA
+5QgAAAEAZggAAAEAZggAAAEAIQMJAJ0GAQARAJ0GBgAZAJ0GCgApAJ0GEAAxAJ0GEAA5AJ0GEABB
+AJ0GEABJAJ0GEABRAJ0GEABZAJ0GEABhAJ0GEABpAJ0GBgChAJ0GBgDBAJ0GFQDRAJ0GBgCRAAoD
+BgCRABUDBgDZAJUGHwDZAEgAIwDhAEgAKQDZAHUFHwBxAJ0GMABxAGwGOgBxAHkHPgB5AAEAQgBx
+AEoFRwB5AE4DTAB5AFgDUQBxAGUFVwBxAFEFAQDpAJ0GEABxAOEIXQBxACoIXQCRAJ0GBgDZANEH
+YQCRAI0HaACZAJ0GBgD5AH4AbgD5AO8IdgCpAJ0GfADJAJ0GBgAuAAsACwEuABMAFAEuABsAMwEu
+ACMAPAEuACsAZQEuADMAZQEuADsAZQEuAEMAPAEuAEsAawEuAFMAZQEuAFsAggFDAGMAzAHhAHsA
+zAHjAGsAzAGpBXMAMwHJBXMAMwEbAAMAAQAHAC0ACAAvAAAAlAXrAAAAiwTvAAAAuADzAAAA4APv
+AAAA9gDzAAAABgTvAAAAXQXzAAAAVATvAAAAlADzAAAAuAPvAAAAqwXzAAAAnQTvAAAAAgHzAAAA
+GQTvAAAAZADzAAAApQPvAAAAkQjzAAAAMwXvAAAAKwPzAAAAQATvAAAAiwbzAAAAsQTvAAAAyQfz
+AAAA8gTvAAAAfgXrAAAAZwTvAAAAGwjzAAAAIAXvAAAAEwjzAAAAGAXvAAAAAAnzAAAAQgXvAAAA
+twfzAAAA2QTvAAAAiQX3AAAAeQTvAAAADwHzAAAALQTvAAAAxADzAAAA8wPvAAAAxgfzAAAA7wTv
+AAAAqADzAAAAyQPvAAAAdwb8AAAANwEBAQAAOggGAQIABgADAAIABwAFAAIACAAHAAIACQAJAAIA
+CgALAAIACwANAAIADAAPAAIADQARAAIADgATAAIADwAVAAIAEAAXAAIAEQAZAAIAEgAbAAIAEwAd
+AAIAFAAfAAIAFQAhAAIAFgAjAAIAFwAlAAIAGAAnAAIAGQApAAIAGgArAAIAGwAtAAIAHAAvAAIA
+HQAxAAIAHgAzAAIAHwA1AAIAIAA3AAIAIQA5AAIAIgA7AAIAIwA9AAIAJAA/AAIAJQBBAAIAJgBD
+AAIAJwBFAAIAKABHAAIAKQBJAAIAKgBLAAIAKwBNAAIALABPAAIALQBRAAIALgBTAAIALwBVAAEA
+MABXAAEAMQBZAAIAOwBbAAIAPABdAAEAPQBdAAIAPgBfAASAAAABAAAAAAAAAAAAAAAAAAoAAAAE
+AAAAAAAAAAAAAACEAD8AAAAAABAAAAAAAAAAAAAAAI0AcAgAAAAAEAAAAAAAAAAAAAAAjQCVCAAA
+AAAEAAAAAAAAAAAAAACEAG4FAAAAAAAAAAABAAAA7gYAAAAAAAAAR2V0SW50NjQAU0NfZDc1ZjAy
+ZTQwMzExNDc5Njg3MTFlOTI3YjkyZjY0YTcAPE1vZHVsZT4ASW5wdXRJRABtc2NvcmxpYgBSZXBs
+YWNlAGRlZmF1bHRJbnN0YW5jZQBnZXRfdG9ubmFnZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBl
+RnJvbUhhbmRsZQBnZXRfdGl0bGUASW5wdXROYW1lAHNldF9jbGVhbmVkbmFtZQBnZXRfc2RubmFt
+ZQBnZXRfYWx0bmFtZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBUeXBlAGdldF9z
+ZG50eXBlAGdldF92ZXNzdHlwZQBnZXRfYWx0dHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQBy
+ZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3Rh
+dGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0
+ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRp
+dGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0
+dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlv
+bkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVj
+dEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50
+RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBh
+dGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBnZXRfdmVzc2Zs
+YWcAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBHZXRTdHJpbmcAR2V0RGVjaW1hbABTeXN0ZW0u
+Q29tcG9uZW50TW9kZWwAU0NfZDc1ZjAyZTQwMzExNDc5Njg3MTFlOTI3YjkyZjY0YTcuZGxsAGdl
+dF90b25uYWdlX0lzTnVsbABnZXRfdGl0bGVfSXNOdWxsAHNldF9jbGVhbmVkbmFtZV9Jc051bGwA
+Z2V0X3Nkbm5hbWVfSXNOdWxsAGdldF9hbHRuYW1lX0lzTnVsbABnZXRfc2RudHlwZV9Jc051bGwA
+Z2V0X3Zlc3N0eXBlX0lzTnVsbABnZXRfYWx0dHlwZV9Jc051bGwAZ2V0X3Zlc3NmbGFnX0lzTnVs
+bABnZXRfcHJvZ3JhbV9Jc051bGwAZ2V0X2FkZG51bV9Jc051bGwAZ2V0X2FsdG51bV9Jc051bGwA
+Z2V0X2VudG51bV9Jc051bGwAZ2V0X2NhbGxzaWduX0lzTnVsbABnZXRfdmVzc293bmVyX0lzTnVs
+bABnZXRfcmVtYXJrc19Jc051bGwAZ2V0X2FkZHJlbWFya3NfSXNOdWxsAGdldF9hbHRyZW1hcmtz
+X0lzTnVsbABnZXRfYWRkcmVzc19Jc051bGwAZ2V0X2NvbXBsZXRlYWRkcmVzc19Jc051bGwAZ2V0
+X2dydF9Jc051bGwAZ2V0X2NvdW50cnlfSXNOdWxsAFNldE51bGwAZ2V0X3Byb2dyYW0Ac2V0X0l0
+ZW0AU3lzdGVtAFRyaW0AZ2V0X2FkZG51bQBnZXRfYWx0bnVtAGdldF9lbnRudW0AcmVzb3VyY2VN
+YW4AZ2V0X2NhbGxzaWduAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkds
+b2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBT
+dHJpbmdDb21wYXJpc29uAEN1bHR1cmVJbmZvAE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAElucHV0
+MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgBn
+ZXRfdmVzc293bmVyAFRvVXBwZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0
+ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU0NfZDc1ZjAyZTQw
+MzExNDc5Njg3MTFlOTI3YjkyZjY0YTcuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERl
+YnVnZ2luZ01vZGVzAFNDX2Q3NWYwMmU0MDMxMTQ3OTY4NzExZTkyN2I5MmY2NGE3LlByb3BlcnRp
+ZXMAVmFyaWFibGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMAR2V0Q29sdW1uSW5kZXhlcwBTZXR0aW5n
+cwBnZXRfcmVtYXJrcwBnZXRfYWRkcmVtYXJrcwBnZXRfYWx0cmVtYXJrcwBFcXVhbHMAU3lzdGVt
+LlRleHQuUmVndWxhckV4cHJlc3Npb25zAENvbm5lY3Rpb25zAGdldF9hZGRyZXNzAGdldF9jb21w
+bGV0ZWFkZHJlc3MAT2JqZWN0AEVuZE9mUm93c2V0AGdldF9EZWZhdWx0AFVzZXJDb21wb25lbnQA
+UGFyZW50Q29tcG9uZW50AFNjcmlwdENvbXBvbmVudABNaWNyb3NvZnQuU3FsU2VydmVyLlR4U2Ny
+aXB0AGdldF9ncnQATWljcm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nl
+c3NJbnB1dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cAUmVnZXgAZ2V0X0Fzc2VtYmx5
+AGdldF9jb3VudHJ5AAADLwAAAyAAAAMtAAEVWwBeAEEALQBaADAALQA5ACAAXQABAQAHXABzACsA
+AICbSQBzAE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABjAGEAbgBuAG8AdAAgAGIAZQAgAHMA
+ZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1AGUAIAB0
+AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEAZAAuAAAPSQBuAHAAdQB0ACAA
+MAAAcVMAQwBfAGQANwA1AGYAMAAyAGUANAAwADMAMQAxADQANwA5ADYAOAA3ADEAMQBlADkAMgA3
+AGIAOQAyAGYANgA0AGEANwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUA
+cwAAvhHfI+5pFEy2jaWgsG/WJgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERXQMHAQ4DIAAOBSAC
+Dg4OBgADDg4ODgkgAwESPR0IEkEDBhI9AwYdCAQgAQoIBCABAggEIAEOCAUgARFFCAUgAgEIHAMg
+AAIGIAICDhF5BSABHQgIBwABEn0RgIEFIAASgIUHIAIBDhKAhQi3elxWGTTgiQiJhF3NgIDMkQMG
+EhQDBhIYAwYSSQMGElUDBhJZAwYSIAUgAQESDAMgAAoEIAARRQQgAQECCSAEAQgOEj0SQQUgAQES
+SQQAABJVBAAAElkFAAEBElkEAAASIAMAAAEDKAAKAygAAgMoAA4EKAARRQQIABJVBAgAElkECAAS
+IAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0Nf
+ZDc1ZjAyZTQwMzExNDc5Njg3MTFlOTI3YjkyZjY0YTcAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAg
+MjAyNQAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5
+TmFtZRIuTkVUIEZyYW1ld29yayA0LjcEAQAAAAAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJl
+c291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVy
+ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJj
+ZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAAC4OwAAAAAAAAAAAADS
+OwAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxDsAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2Nv
+cmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
+ABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAA
+WEAAAOwDAAAAAAAAAAAAAOwDNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9
+BO/+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEA
+VgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAA
+AAAAsARMAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAAoAwAAAQAwADAAMAAwADAA
+NABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBO
+AGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMA
+QwBfAGQANwA1AGYAMAAyAGUANAAwADMAMQAxADQANwA5ADYAOAA3ADEAMQBlADkAMgA3AGIAOQAy
+AGYANgA0AGEANwAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgAwAC4A
+MAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8AZAA3ADUAZgAwADIAZQA0
+ADAAMwAxADEANAA3ADkANgA4ADcAMQAxAGUAOQAyADcAYgA5ADIAZgA2ADQAYQA3AC4AZABsAGwA
+AABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAg
+AEAAIAAgADIAMAAyADUAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsAcwAAAAAA
+AAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwBkADcANQBm
+ADAAMgBlADQAMAAzADEAMQA0ADcAOQA2ADgANwAxADEAZQA5ADIANwBiADkAMgBmADYANABhADcA
+LgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8AZAA3ADUAZgAw
+ADIAZQA0ADAAMwAxADEANAA3ADkANgA4ADcAMQAxAGUAOQAyADcAYgA5ADIAZgA2ADQAYQA3AAAA
+NAAIAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAADgACAAB
+AEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAADkOwAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_d75f02e4031147968711e927b92f64a7</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">EC</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[ent_num]"
+                      cachedDataType="i8"
+                      cachedName="ent_num"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[ent_num]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[sdn_name]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="sdn_name"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[sdn_name]"
+                      name="sdn_name" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[sdn_type]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="sdn_type"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[sdn_type]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[program]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="program"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[program]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[title]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="title"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[title]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[call_sign]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="call_sign"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[call_sign]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[vess_type]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="vess_type"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[vess_type]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[tonnage]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="tonnage"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[tonnage]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[grt]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="grt"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[grt]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[vess_flag]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="vess_flag"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[vess_flag]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[vess_owner]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="vess_owner"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[vess_owner]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[remarks]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="remarks"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[remarks]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[add_num]"
+                      cachedDataType="i8"
+                      cachedName="add_num"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[add_num]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[address]"
+                      cachedDataType="wstr"
+                      cachedLength="750"
+                      cachedName="address"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[complete_address]"
+                      cachedDataType="wstr"
+                      cachedLength="116"
+                      cachedName="complete_address"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[complete_address]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="country"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[add_remarks]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="add_remarks"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[add_remarks]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[alt_num]"
+                      cachedDataType="numeric"
+                      cachedName="alt_num"
+                      cachedPrecision="28"
+                      cachedScale="6"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[alt_num]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[alt_type]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="alt_type"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[alt_type]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[alt_name]"
+                      cachedDataType="wstr"
+                      cachedLength="350"
+                      cachedName="alt_name"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[alt_name]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[alt_remarks]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="alt_remarks"
+                      lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[alt_remarks]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge OFAC Tables\Add cleaned name.Outputs[Output 0]"
+                  name="Output 0"
+                  synchronousInputId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge OFAC Tables\Add cleaned name.Outputs[Output 0].Columns[cleaned_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Merge OFAC Tables\Add cleaned name.Outputs[Output 0].Columns[cleaned_name]"
+                      name="cleaned_name" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Merge OFAC Tables\Merged OFAC Tables"
               componentClassID="Microsoft.MergeJoin"
@@ -603,7 +1971,8 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM stg_ofac_add
+ORDER BY ent_num</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows fetched per batch."
@@ -649,7 +2018,7 @@
                   description="The mode used to access the database."
                   expressionType="Notify"
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">1</property>
               </properties>
               <connections>
                 <connection
@@ -822,7 +2191,8 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM stg_ofac_alt
+ORDER BY ent_num</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows fetched per batch."
@@ -868,7 +2238,7 @@
                   description="The mode used to access the database."
                   expressionType="Notify"
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">1</property>
               </properties>
               <connections>
                 <connection
@@ -1032,7 +2402,8 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM stg_ofac_sdn
+ORDER BY ent_num</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows fetched per batch."
@@ -1078,7 +2449,7 @@
                   description="The mode used to access the database."
                   expressionType="Notify"
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">1</property>
               </properties>
               <connections>
                 <connection
@@ -1967,6 +3338,14 @@
                       cachedName="alt_remarks"
                       externalMetadataColumnId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[alt_remarks]"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[alt_remarks]" />
+                    <inputColumn
+                      refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].Columns[cleaned_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="cleaned_name"
+                      externalMetadataColumnId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[cleaned_name]"
+                      lineageId="Package\Merge OFAC Tables\Add cleaned name.Outputs[Output 0].Columns[cleaned_name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2074,6 +3453,11 @@
                       dataType="wstr"
                       length="200"
                       name="alt_remarks" />
+                    <externalMetadataColumn
+                      refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[cleaned_name]"
+                      dataType="wstr"
+                      length="250"
+                      name="cleaned_name" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2111,7 +3495,7 @@
               startId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output]" />
             <path
               refId="Package\Merge OFAC Tables.Paths[Merge Join Output1]"
-              endId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input]"
+              endId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0]"
               name="Merge Join Output"
               startId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output]" />
             <path
@@ -2129,6 +3513,11 @@
               endId="Package\Merge OFAC Tables\Merged OFAC Tables.Inputs[Merge Join Left Input]"
               name="ODBC Source Output"
               startId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output]" />
+            <path
+              refId="Package\Merge OFAC Tables.Paths[Output 0]"
+              endId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input]"
+              name="Output 0"
+              startId="Package\Merge OFAC Tables\Add cleaned name.Outputs[Output 0]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3779,197 +5168,213 @@
     design-time-name="Package\Merge OFAC Tables">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="143.2,41.6"
           Id="Package\Merge OFAC Tables\Postgre Table"
-          TopLeft="282.857138642243,356.428566117372" />
+          TopLeft="222.3,411.9" />
         <NodeLayout
           Size="128.8,41.6"
           Id="Package\Merge OFAC Tables\OFAC ALT"
-          TopLeft="352.14285189552,151.42856917211" />
+          TopLeft="5.49999999999997,107.1" />
         <NodeLayout
           Size="132,41.6"
           Id="Package\Merge OFAC Tables\OFAC ADD"
-          TopLeft="203.999996960163,53.6000007152557" />
+          TopLeft="34.9,5.49999999999995" />
         <NodeLayout
           Size="132,41.6"
           Id="Package\Merge OFAC Tables\OFAC SDN"
-          TopLeft="53.9999991953373,52.9999992102385" />
+          TopLeft="227.9,5.49999999999995" />
         <NodeLayout
           Size="179.2,41.6"
           Id="Package\Merge OFAC Tables\Merged OFAC Tables"
-          TopLeft="272.857138791255,251.428567681994" />
+          TopLeft="204.3,208.7" />
         <NodeLayout
           Size="197.6,41.6"
           Id="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD"
-          TopLeft="133.999998003244,146.999997809529" />
+          TopLeft="195.1,107.1" />
         <EdgeLayout
           Id="Package\Merge OFAC Tables.Paths[ODBC Source Output2]"
-          TopLeft="416.54285189552,193.02856917211">
+          TopLeft="69.9,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-25.5523797709319,58.3999985098839"
+              EndConnector="195.466666666667,59.9999999999999"
               Start="0,0"
-              End="-25.5523797709319,50.8999985098839">
+              End="195.466666666667,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.7299106182672" />
+                    End="0,31.6814159292035" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.7299106182672"
-                    Point2="0,34.7299106182672"
-                    Point3="-4,34.7299106182672" />
+                    Point1="0,31.6814159292035"
+                    Point2="0,35.6814159292035"
+                    Point3="4,35.6814159292035" />
                   <mssgle:LineSegment
-                    End="-21.5523797709319,34.7299106182672" />
+                    End="191.466666666667,35.6814159292035" />
                   <mssgle:CubicBezierSegment
-                    Point1="-21.5523797709319,34.7299106182672"
-                    Point2="-25.5523797709319,34.7299106182672"
-                    Point3="-25.5523797709319,38.7299106182672" />
+                    Point1="191.466666666667,35.6814159292035"
+                    Point2="195.466666666667,35.6814159292035"
+                    Point3="195.466666666667,39.6814159292035" />
                   <mssgle:LineSegment
-                    End="-25.5523797709319,50.8999985098839" />
+                    End="195.466666666667,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Merge OFAC Tables.Paths[ODBC Source Output1]"
-          TopLeft="267.199997481704,95.2000007152558">
+          TopLeft="100.9,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.7999970942736"
+              EndConnector="161.4,59.9999999999999"
               Start="0,0"
-              End="0,44.2999970942736">
+              End="161.4,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.2999970942736" />
+                    End="0,31.7108433734939" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7108433734939"
+                    Point2="0,35.7108433734939"
+                    Point3="4,35.7108433734939" />
+                  <mssgle:LineSegment
+                    End="157.4,35.7108433734939" />
+                  <mssgle:CubicBezierSegment
+                    Point1="157.4,35.7108433734939"
+                    Point2="161.4,35.7108433734939"
+                    Point3="161.4,39.7108433734939" />
+                  <mssgle:LineSegment
+                    End="161.4,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Merge OFAC Tables.Paths[ODBC Source Output]"
-          TopLeft="119.999999195337,94.5999992102385">
+          TopLeft="293.9,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="81.1999988079071,52.3999985992908"
+              EndConnector="31.6,59.9999999999999"
               Start="0,0"
-              End="81.1999988079071,44.8999985992908">
+              End="31.6,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.187469045843" />
+                    End="0,31.7108433734939" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.187469045843"
-                    Point2="0,31.187469045843"
-                    Point3="4,31.187469045843" />
+                    Point1="0,31.7108433734939"
+                    Point2="0,35.7108433734939"
+                    Point3="4,35.7108433734939" />
                   <mssgle:LineSegment
-                    End="77.1999988079071,31.187469045843" />
+                    End="27.6,35.7108433734939" />
                   <mssgle:CubicBezierSegment
-                    Point1="77.1999988079071,31.187469045843"
-                    Point2="81.1999988079071,31.187469045843"
-                    Point3="81.1999988079071,35.187469045843" />
+                    Point1="27.6,35.7108433734939"
+                    Point2="31.6,35.7108433734939"
+                    Point3="31.6,39.7108433734939" />
                   <mssgle:LineSegment
-                    End="81.1999988079071,44.8999985992908" />
+                    End="31.6,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge OFAC Tables.Paths[Merge Join Output1]"
-          TopLeft="362.457138791255,293.028567681994">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-8.00000014901161,63.3999984353782"
-              Start="0,0"
-              End="-8.00000014901161,55.8999984353782">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.6999992176891" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.6999992176891"
-                    Point2="0,31.6999992176891"
-                    Point3="-4,31.6999992176891" />
-                  <mssgle:LineSegment
-                    End="-4.00000014901161,31.6999992176891" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.00000014901161,31.6999992176891"
-                    Point2="-8.00000014901161,31.6999992176891"
-                    Point3="-8.00000014901161,35.6999992176891" />
-                  <mssgle:LineSegment
-                    End="-8.00000014901161,55.8999984353782" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Merge OFAC Tables.Paths[Merge Join Output]"
-          TopLeft="232.799998003244,188.599997809529">
+          TopLeft="293.9,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="101.123807454677,62.8285698724646"
+              EndConnector="28.5333333333333,59.9999999999999"
               Start="0,0"
-              End="101.123807454677,55.3285698724646">
+              End="28.5333333333333,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.3635388976072" />
+                    End="0,31.6814159292035" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.3635388976072"
-                    Point2="0,37.3635388976072"
-                    Point3="4,37.3635388976072" />
+                    Point1="0,31.6814159292035"
+                    Point2="0,35.6814159292035"
+                    Point3="4,35.6814159292035" />
                   <mssgle:LineSegment
-                    End="97.1238074546768,37.3635388976072" />
+                    End="24.5333333333333,35.6814159292035" />
                   <mssgle:CubicBezierSegment
-                    Point1="97.1238074546768,37.3635388976072"
-                    Point2="101.123807454677,37.3635388976072"
-                    Point3="101.123807454677,41.3635388976072" />
+                    Point1="24.5333333333333,35.6814159292035"
+                    Point2="28.5333333333333,35.6814159292035"
+                    Point3="28.5333333333333,39.6814159292035" />
                   <mssgle:LineSegment
-                    End="101.123807454677,55.3285698724646" />
+                    End="28.5333333333333,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Merge OFAC Tables\Add cleaned name"
+          TopLeft="213.1,310.3" />
+        <EdgeLayout
+          Id="Package\Merge OFAC Tables.Paths[Merge Join Output1]"
+          TopLeft="294.7,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge OFAC Tables.Paths[Output 0]"
+          TopLeft="294.7,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
