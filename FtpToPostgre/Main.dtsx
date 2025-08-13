@@ -12,10 +12,22 @@
   DTS:LocaleID="13321"
   DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="96"
-  DTS:VersionGUID="{BA78BE10-799A-4517-BB30-1B08BFE9A3D2}">
+  DTS:VersionBuild="101"
+  DTS:VersionGUID="{F0C50A87-DE25-4C1F-9A91-12B185394C0C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PostgreSQL35W 1]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{75136194-32AA-4BF6-8746-9AC126BF77CE}"
+      DTS:ObjectName="PostgreSQL35W 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=PostgreSQL35W;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -3829,8 +3841,8 @@ ORDER BY ent_num</property>
                   <connections>
                     <connection
                       refId="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\OFAC Table.Connections[ODBCConnection]"
-                      connectionManagerID="{50DFDC78-9568-49D5-A9C8-95ACA9F3A25B}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[PostgreSQL35W]"
+                      connectionManagerID="Package.ConnectionManagers[PostgreSQL35W 1]"
+                      connectionManagerRefId="Package.ConnectionManagers[PostgreSQL35W 1]"
                       description="The ODBC runtime connection used to access the database."
                       name="ODBCConnection" />
                   </connections>
@@ -3892,11 +3904,11 @@ ORDER BY ent_num</property>
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\OFAC Table.Inputs[ODBC Destination Input].ExternalColumns[ent_num]"
-                          dataType="i8"
+                          dataType="i4"
                           name="ent_num" />
                         <externalMetadataColumn
                           refId="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\OFAC Table.Inputs[ODBC Destination Input].ExternalColumns[add_num]"
-                          dataType="i8"
+                          dataType="i4"
                           name="add_num" />
                         <externalMetadataColumn
                           refId="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\OFAC Table.Inputs[ODBC Destination Input].ExternalColumns[address]"
@@ -4226,8 +4238,8 @@ ORDER BY ent_num</property>
                   <connections>
                     <connection
                       refId="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\OFAC Table.Connections[ODBCConnection]"
-                      connectionManagerID="{50DFDC78-9568-49D5-A9C8-95ACA9F3A25B}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[PostgreSQL35W]"
+                      connectionManagerID="Package.ConnectionManagers[PostgreSQL35W 1]"
+                      connectionManagerRefId="Package.ConnectionManagers[PostgreSQL35W 1]"
                       description="The ODBC runtime connection used to access the database."
                       name="ODBCConnection" />
                   </connections>
@@ -4281,16 +4293,12 @@ ORDER BY ent_num</property>
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\OFAC Table.Inputs[ODBC Destination Input].ExternalColumns[ent_num]"
-                          dataType="numeric"
-                          name="ent_num"
-                          precision="28"
-                          scale="6" />
+                          dataType="i4"
+                          name="ent_num" />
                         <externalMetadataColumn
                           refId="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\OFAC Table.Inputs[ODBC Destination Input].ExternalColumns[alt_num]"
-                          dataType="numeric"
-                          name="alt_num"
-                          precision="28"
-                          scale="6" />
+                          dataType="i4"
+                          name="alt_num" />
                         <externalMetadataColumn
                           refId="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\OFAC Table.Inputs[ODBC Destination Input].ExternalColumns[alt_type]"
                           dataType="wstr"
@@ -4814,8 +4822,8 @@ ORDER BY ent_num</property>
                   <connections>
                     <connection
                       refId="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre\OFAC Table.Connections[ODBCConnection]"
-                      connectionManagerID="{50DFDC78-9568-49D5-A9C8-95ACA9F3A25B}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[PostgreSQL35W]"
+                      connectionManagerID="Package.ConnectionManagers[PostgreSQL35W 1]"
+                      connectionManagerRefId="Package.ConnectionManagers[PostgreSQL35W 1]"
                       description="The ODBC runtime connection used to access the database."
                       name="ODBCConnection" />
                   </connections>
@@ -4932,7 +4940,7 @@ ORDER BY ent_num</property>
                         <externalMetadataColumn
                           refId="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre\OFAC Table.Inputs[ODBC Destination Input].ExternalColumns[sdn_name]"
                           dataType="wstr"
-                          length="250"
+                          length="350"
                           name="sdn_name" />
                         <externalMetadataColumn
                           refId="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre\OFAC Table.Inputs[ODBC Destination Input].ExternalColumns[sdn_type]"
@@ -5436,7 +5444,7 @@ ORDER BY ent_num</property>
     design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="119.2,41.6"
           Id="Package\Parallel Execution of Data Flow Tasks\OFAC ADD CSV to Postgre\CSV File"
@@ -5464,9 +5472,7 @@ ORDER BY ent_num</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5489,7 +5495,7 @@ ORDER BY ent_num</property>
     design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="136,41.6"
           Id="Package\Parallel Execution of Data Flow Tasks\OFAC ALT CSV to Postgre\OFAC Table"
@@ -5517,9 +5523,7 @@ ORDER BY ent_num</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5542,7 +5546,7 @@ ORDER BY ent_num</property>
     design-time-name="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="136,41.6"
           Id="Package\Parallel Execution of Data Flow Tasks\OFAC SDN CSV to Postgre\OFAC Table"
@@ -5570,9 +5574,7 @@ ORDER BY ent_num</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
