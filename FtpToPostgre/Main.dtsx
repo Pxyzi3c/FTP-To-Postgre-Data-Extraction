@@ -12,8 +12,8 @@
   DTS:LocaleID="13321"
   DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="101"
-  DTS:VersionGUID="{F0C50A87-DE25-4C1F-9A91-12B185394C0C}">
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{3E7DD3B9-4A89-4C8A-991F-453C4AF23FDA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1336,14 +1336,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[ent_num]"
-                      cachedDataType="i8"
+                      cachedDataType="i4"
                       cachedName="ent_num"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[ent_num]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[sdn_name]"
                       cachedDataType="wstr"
-                      cachedLength="250"
+                      cachedLength="350"
                       cachedName="sdn_name"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[sdn_name]"
                       name="sdn_name" />
@@ -1409,7 +1409,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[remarks]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[add_num]"
-                      cachedDataType="i8"
+                      cachedDataType="i4"
                       cachedName="add_num"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[add_num]" />
                     <inputColumn
@@ -1438,10 +1438,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[add_remarks]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[alt_num]"
-                      cachedDataType="numeric"
+                      cachedDataType="i4"
                       cachedName="alt_num"
-                      cachedPrecision="28"
-                      cachedScale="6"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[alt_num]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Add cleaned name.Inputs[Input 0].Columns[alt_type]"
@@ -1517,14 +1515,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Merged OFAC Tables.Inputs[Merge Join Right Input].Columns[ent_num]"
-                      cachedDataType="i8"
+                      cachedDataType="i4"
                       cachedName="ent_num"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output].Columns[ent_num]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Merged OFAC Tables.Inputs[Merge Join Right Input].Columns[sdn_name]"
                       cachedDataType="wstr"
-                      cachedLength="250"
+                      cachedLength="350"
                       cachedName="sdn_name"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output].Columns[sdn_name]" />
                     <inputColumn
@@ -1589,7 +1587,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       lineageId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output].Columns[remarks]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Merged OFAC Tables.Inputs[Merge Join Right Input].Columns[add_num]"
-                      cachedDataType="i8"
+                      cachedDataType="i4"
                       cachedName="add_num"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output].Columns[add_num]" />
                     <inputColumn
@@ -1626,16 +1624,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Merged OFAC Tables.Inputs[Merge Join Left Input].Columns[ent_num]"
-                      cachedDataType="i8"
+                      cachedDataType="i4"
                       cachedName="ent_num"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].Columns[ent_num]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Merged OFAC Tables.Inputs[Merge Join Left Input].Columns[alt_num]"
-                      cachedDataType="numeric"
+                      cachedDataType="i4"
                       cachedName="alt_num"
-                      cachedPrecision="28"
-                      cachedScale="6"
                       lineageId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].Columns[alt_num]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Merged OFAC Tables.Inputs[Merge Join Left Input].Columns[alt_type]"
@@ -1667,7 +1663,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[ent_num]"
-                      dataType="i8"
+                      dataType="i4"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[ent_num]"
                       name="ent_num"
                       sortKeyPosition="1">
@@ -1682,7 +1678,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[sdn_name]"
                       dataType="wstr"
-                      length="250"
+                      length="350"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[sdn_name]"
                       name="sdn_name">
                       <properties>
@@ -1835,7 +1831,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[add_num]"
-                      dataType="i8"
+                      dataType="i4"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[add_num]"
                       name="add_num">
                       <properties>
@@ -1904,11 +1900,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[alt_num]"
-                      dataType="numeric"
+                      dataType="i4"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[alt_num]"
-                      name="alt_num"
-                      precision="28"
-                      scale="6">
+                      name="alt_num">
                       <properties>
                         <property
                           containsID="true"
@@ -2035,8 +2029,8 @@ ORDER BY ent_num</property>
               <connections>
                 <connection
                   refId="Package\Merge OFAC Tables\OFAC ADD.Connections[ODBCConnection]"
-                  connectionManagerID="{50DFDC78-9568-49D5-A9C8-95ACA9F3A25B}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PostgreSQL35W]"
+                  connectionManagerID="Package.ConnectionManagers[PostgreSQL35W 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[PostgreSQL35W 1]"
                   description="The ODBC runtime connection used to access the database."
                   name="ODBCConnection" />
               </connections>
@@ -2050,14 +2044,14 @@ ORDER BY ent_num</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].Columns[ent_num]"
-                      dataType="i8"
+                      dataType="i4"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].ExternalColumns[ent_num]"
                       lineageId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].Columns[ent_num]"
                       name="ent_num"
                       sortKeyPosition="1" />
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].Columns[add_num]"
-                      dataType="i8"
+                      dataType="i4"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].ExternalColumns[add_num]"
                       lineageId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].Columns[add_num]"
                       name="add_num" />
@@ -2094,11 +2088,11 @@ ORDER BY ent_num</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].ExternalColumns[ent_num]"
-                      dataType="i8"
+                      dataType="i4"
                       name="ent_num" />
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].ExternalColumns[add_num]"
-                      dataType="i8"
+                      dataType="i4"
                       name="add_num" />
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].ExternalColumns[address]"
@@ -2129,13 +2123,13 @@ ORDER BY ent_num</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Error Output].Columns[ent_num]"
-                      dataType="i8"
+                      dataType="i4"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].ExternalColumns[ent_num]"
                       lineageId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Error Output].Columns[ent_num]"
                       name="ent_num" />
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Error Output].Columns[add_num]"
-                      dataType="i8"
+                      dataType="i4"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].ExternalColumns[add_num]"
                       lineageId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Error Output].Columns[add_num]"
                       name="add_num" />
@@ -2255,8 +2249,8 @@ ORDER BY ent_num</property>
               <connections>
                 <connection
                   refId="Package\Merge OFAC Tables\OFAC ALT.Connections[ODBCConnection]"
-                  connectionManagerID="{50DFDC78-9568-49D5-A9C8-95ACA9F3A25B}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PostgreSQL35W]"
+                  connectionManagerID="Package.ConnectionManagers[PostgreSQL35W 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[PostgreSQL35W 1]"
                   description="The ODBC runtime connection used to access the database."
                   name="ODBCConnection" />
               </connections>
@@ -2270,19 +2264,17 @@ ORDER BY ent_num</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].Columns[ent_num]"
-                      dataType="i8"
+                      dataType="i4"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].ExternalColumns[ent_num]"
                       lineageId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].Columns[ent_num]"
                       name="ent_num"
                       sortKeyPosition="1" />
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].Columns[alt_num]"
-                      dataType="numeric"
+                      dataType="i4"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].ExternalColumns[alt_num]"
                       lineageId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].Columns[alt_num]"
-                      name="alt_num"
-                      precision="28"
-                      scale="6" />
+                      name="alt_num" />
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].Columns[alt_type]"
                       dataType="wstr"
@@ -2309,16 +2301,12 @@ ORDER BY ent_num</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].ExternalColumns[ent_num]"
-                      dataType="numeric"
-                      name="ent_num"
-                      precision="28"
-                      scale="6" />
+                      dataType="i4"
+                      name="ent_num" />
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].ExternalColumns[alt_num]"
-                      dataType="numeric"
-                      name="alt_num"
-                      precision="28"
-                      scale="6" />
+                      dataType="i4"
+                      name="alt_num" />
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].ExternalColumns[alt_type]"
                       dataType="wstr"
@@ -2343,20 +2331,16 @@ ORDER BY ent_num</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Error Output].Columns[ent_num]"
-                      dataType="numeric"
+                      dataType="i4"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].ExternalColumns[ent_num]"
                       lineageId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Error Output].Columns[ent_num]"
-                      name="ent_num"
-                      precision="28"
-                      scale="6" />
+                      name="ent_num" />
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Error Output].Columns[alt_num]"
-                      dataType="numeric"
+                      dataType="i4"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Output].ExternalColumns[alt_num]"
                       lineageId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Error Output].Columns[alt_num]"
-                      name="alt_num"
-                      precision="28"
-                      scale="6" />
+                      name="alt_num" />
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC ALT.Outputs[ODBC Source Error Output].Columns[alt_type]"
                       dataType="wstr"
@@ -2466,8 +2450,8 @@ ORDER BY ent_num</property>
               <connections>
                 <connection
                   refId="Package\Merge OFAC Tables\OFAC SDN.Connections[ODBCConnection]"
-                  connectionManagerID="{50DFDC78-9568-49D5-A9C8-95ACA9F3A25B}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PostgreSQL35W]"
+                  connectionManagerID="Package.ConnectionManagers[PostgreSQL35W 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[PostgreSQL35W 1]"
                   description="The ODBC runtime connection used to access the database."
                   name="ODBCConnection" />
               </connections>
@@ -2481,7 +2465,7 @@ ORDER BY ent_num</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].Columns[ent_num]"
-                      dataType="i8"
+                      dataType="i4"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].ExternalColumns[ent_num]"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].Columns[ent_num]"
                       name="ent_num"
@@ -2490,7 +2474,7 @@ ORDER BY ent_num</property>
                       refId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].Columns[sdn_name]"
                       dataType="wstr"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].ExternalColumns[sdn_name]"
-                      length="250"
+                      length="350"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].Columns[sdn_name]"
                       name="sdn_name" />
                     <outputColumn
@@ -2573,7 +2557,7 @@ ORDER BY ent_num</property>
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].ExternalColumns[sdn_name]"
                       dataType="wstr"
-                      length="250"
+                      length="350"
                       name="sdn_name" />
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].ExternalColumns[sdn_type]"
@@ -2642,7 +2626,7 @@ ORDER BY ent_num</property>
                       refId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Error Output].Columns[sdn_name]"
                       dataType="wstr"
                       externalMetadataColumnId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].ExternalColumns[sdn_name]"
-                      length="250"
+                      length="350"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Error Output].Columns[sdn_name]"
                       name="sdn_name" />
                     <outputColumn
@@ -2766,14 +2750,14 @@ ORDER BY ent_num</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Inputs[Merge Join Left Input].Columns[ent_num]"
-                      cachedDataType="i8"
+                      cachedDataType="i4"
                       cachedName="ent_num"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].Columns[ent_num]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Inputs[Merge Join Left Input].Columns[sdn_name]"
                       cachedDataType="wstr"
-                      cachedLength="250"
+                      cachedLength="350"
                       cachedName="sdn_name"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN.Outputs[ODBC Source Output].Columns[sdn_name]" />
                     <inputColumn
@@ -2846,13 +2830,13 @@ ORDER BY ent_num</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Inputs[Merge Join Right Input].Columns[ent_num]"
-                      cachedDataType="i8"
+                      cachedDataType="i4"
                       cachedName="ent_num"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].Columns[ent_num]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Inputs[Merge Join Right Input].Columns[add_num]"
-                      cachedDataType="i8"
+                      cachedDataType="i4"
                       cachedName="add_num"
                       lineageId="Package\Merge OFAC Tables\OFAC ADD.Outputs[ODBC Source Output].Columns[add_num]" />
                     <inputColumn
@@ -2891,7 +2875,7 @@ ORDER BY ent_num</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output].Columns[ent_num]"
-                      dataType="i8"
+                      dataType="i4"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output].Columns[ent_num]"
                       name="ent_num"
                       sortKeyPosition="1">
@@ -2906,7 +2890,7 @@ ORDER BY ent_num</property>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output].Columns[sdn_name]"
                       dataType="wstr"
-                      length="250"
+                      length="350"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output].Columns[sdn_name]"
                       name="sdn_name">
                       <properties>
@@ -3059,7 +3043,7 @@ ORDER BY ent_num</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output].Columns[add_num]"
-                      dataType="i8"
+                      dataType="i4"
                       lineageId="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD.Outputs[Merge Join Output].Columns[add_num]"
                       name="add_num">
                       <properties>
@@ -3205,7 +3189,7 @@ ORDER BY ent_num</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].Columns[ent_num]"
-                      cachedDataType="i8"
+                      cachedDataType="i4"
                       cachedName="ent_num"
                       cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[ent_num]"
@@ -3213,7 +3197,7 @@ ORDER BY ent_num</property>
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].Columns[sdn_name]"
                       cachedDataType="wstr"
-                      cachedLength="250"
+                      cachedLength="350"
                       cachedName="sdn_name"
                       externalMetadataColumnId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[sdn_name]"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[sdn_name]" />
@@ -3289,7 +3273,7 @@ ORDER BY ent_num</property>
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[remarks]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].Columns[add_num]"
-                      cachedDataType="i8"
+                      cachedDataType="i4"
                       cachedName="add_num"
                       externalMetadataColumnId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[add_num]"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[add_num]" />
@@ -3323,10 +3307,8 @@ ORDER BY ent_num</property>
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[add_remarks]" />
                     <inputColumn
                       refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].Columns[alt_num]"
-                      cachedDataType="numeric"
+                      cachedDataType="i4"
                       cachedName="alt_num"
-                      cachedPrecision="28"
-                      cachedScale="6"
                       externalMetadataColumnId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[alt_num]"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[alt_num]" />
                     <inputColumn
@@ -3350,14 +3332,6 @@ ORDER BY ent_num</property>
                       cachedName="alt_remarks"
                       externalMetadataColumnId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[alt_remarks]"
                       lineageId="Package\Merge OFAC Tables\Merged OFAC Tables.Outputs[Merge Join Output].Columns[alt_remarks]" />
-                    <inputColumn
-                      refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].Columns[cleaned_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="cleaned_name"
-                      externalMetadataColumnId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[cleaned_name]"
-                      lineageId="Package\Merge OFAC Tables\Add cleaned name.Outputs[Output 0].Columns[cleaned_name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3368,7 +3342,7 @@ ORDER BY ent_num</property>
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[sdn_name]"
                       dataType="wstr"
-                      length="250"
+                      length="350"
                       name="sdn_name" />
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[sdn_type]"
@@ -3422,7 +3396,7 @@ ORDER BY ent_num</property>
                       name="remarks" />
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[add_num]"
-                      dataType="i8"
+                      dataType="i4"
                       name="add_num" />
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[address]"
@@ -3446,10 +3420,8 @@ ORDER BY ent_num</property>
                       name="add_remarks" />
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[alt_num]"
-                      dataType="numeric"
-                      name="alt_num"
-                      precision="28"
-                      scale="6" />
+                      dataType="i4"
+                      name="alt_num" />
                     <externalMetadataColumn
                       refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[alt_type]"
                       dataType="wstr"
@@ -3465,11 +3437,6 @@ ORDER BY ent_num</property>
                       dataType="wstr"
                       length="200"
                       name="alt_remarks" />
-                    <externalMetadataColumn
-                      refId="Package\Merge OFAC Tables\Postgre Table.Inputs[ODBC Destination Input].ExternalColumns[cleaned_name]"
-                      dataType="wstr"
-                      length="250"
-                      name="cleaned_name" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5182,6 +5149,14 @@ ORDER BY ent_num</property>
           Id="Package\Merge OFAC Tables\Postgre Table"
           TopLeft="222.3,411.9" />
         <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Merge OFAC Tables\Add cleaned name"
+          TopLeft="213.1,310.3" />
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD"
+          TopLeft="195.1,107.1" />
+        <NodeLayout
           Size="128.8,41.6"
           Id="Package\Merge OFAC Tables\OFAC ALT"
           TopLeft="5.49999999999997,107.1" />
@@ -5197,10 +5172,28 @@ ORDER BY ent_num</property>
           Size="179.2,41.6"
           Id="Package\Merge OFAC Tables\Merged OFAC Tables"
           TopLeft="204.3,208.7" />
-        <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\Merge OFAC Tables\OFAC SDN + OFAC ADD"
-          TopLeft="195.1,107.1" />
+        <EdgeLayout
+          Id="Package\Merge OFAC Tables.Paths[Output 0]"
+          TopLeft="294.7,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Merge OFAC Tables.Paths[ODBC Source Output2]"
           TopLeft="69.9,148.7">
@@ -5304,6 +5297,28 @@ ORDER BY ent_num</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Merge OFAC Tables.Paths[Merge Join Output1]"
+          TopLeft="294.7,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Merge OFAC Tables.Paths[Merge Join Output]"
           TopLeft="293.9,148.7">
           <EdgeLayout.Curve>
@@ -5329,54 +5344,6 @@ ORDER BY ent_num</property>
                     Point3="28.5333333333333,39.6814159292035" />
                   <mssgle:LineSegment
                     End="28.5333333333333,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Merge OFAC Tables\Add cleaned name"
-          TopLeft="213.1,310.3" />
-        <EdgeLayout
-          Id="Package\Merge OFAC Tables.Paths[Merge Join Output1]"
-          TopLeft="294.7,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge OFAC Tables.Paths[Output 0]"
-          TopLeft="294.7,351.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
